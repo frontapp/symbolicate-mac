@@ -45,7 +45,11 @@ const download = (options, callback) => {
   if (fs.existsSync(directory) && !force) return callback()
 
   electronDownload({
-    version: version,
+    // cache: '~/.electron-download-cache',
+    mirror: 'https://dl.frontapp.com/',
+    customDir: 'electron-artifacts/v8.3.0-front-1_20200601',
+    version: '8.3.0-front-1',
+    // version: version,
     dsym: true,
     platform,
     arch: 'x64',
